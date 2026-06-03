@@ -4,7 +4,7 @@
 
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 
-const MODEL_NAME = 'gemini-2.0-flash';
+const MODEL_NAME = 'gemini-2.5-flash';
 
 function getClient(): GoogleGenerativeAI {
   const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_AI_API_KEY;
@@ -82,6 +82,9 @@ export async function generateResponse(prompt: string, context: string): Promise
     if (error instanceof Error) {
       if (error.message.includes('GEMINI_API_KEY')) {
         return 'AI service is not configured. Please set up the API key.';
+      }
+      if (error.message.includes('429') || error.message.toLowerCase().includes('quota')) {
+        return 'Gemini quota or rate limit reached. Please try again later.';
       }
       return `AI service is temporarily unavailable. Please try again later.`;
     }

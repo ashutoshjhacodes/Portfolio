@@ -169,7 +169,7 @@ export async function POST(request: Request): Promise<Response> {
 
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
-      model: 'gemini-2.0-flash',
+      model: 'gemini-2.5-flash',
       systemInstruction: CAREER_STORY_SYSTEM_PROMPT,
       generationConfig: {
         temperature: 0.7,
@@ -211,15 +211,18 @@ Generate a career narrative (150-800 words) highlighting how Ashutosh's experien
     );
   } catch (error) {
     const isConfigError = error instanceof Error && error.message.includes('API_KEY');
+    const isQuotaError = error instanceof Error && (error.message.includes('429') || error.message.toLowerCase().includes('quota'));
 
     return Response.json(
       {
         error: isConfigError
           ? 'AI service is not configured'
-          : 'Career story generation is temporarily unavailable. Please try again later.',
-        code: isConfigError ? 'SERVICE_NOT_CONFIGURED' : 'SERVICE_UNAVAILABLE',
+          : isQuotaError
+            ? 'Gemini quota or rate limit reached. Please try again later.'
+            : 'Career story generation is temporarily unavailable. Please try again later.',
+        code: isConfigError ? 'SERVICE_NOT_CONFIGURED' : isQuotaError ? 'QUOTA_EXCEEDED' : 'SERVICE_UNAVAILABLE',
       } satisfies CareerStoryErrorResponse,
-      { status: 503 }
+      { status: isQuotaError ? 429 : 503 }
     );
   }
 }

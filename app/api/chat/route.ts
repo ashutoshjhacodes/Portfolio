@@ -47,6 +47,10 @@ async function withRetry<T>(fn: () => Promise<T>, maxRetries: number): Promise<T
       return await fn();
     } catch (error) {
       lastError = error instanceof Error ? error : new Error(String(error));
+      const nonRetryableError = lastError.message.includes('not configured') || lastError.message.includes('quota');
+      if (nonRetryableError) {
+        throw lastError;
+      }
       if (attempt < maxRetries) {
         const delay = BASE_DELAY_MS * Math.pow(2, attempt);
         await new Promise(resolve => setTimeout(resolve, delay));
@@ -109,6 +113,9 @@ export async function POST(request: Request): Promise<Response> {
       if (response.includes('AI service is not configured')) {
         throw new Error('Gemini API not configured');
       }
+      if (response.includes('Gemini quota or rate limit reached')) {
+        throw new Error('Gemini API quota exceeded');
+      }
 
       return response;
     }, MAX_RETRIES);
@@ -128,15 +135,18 @@ export async function POST(request: Request): Promise<Response> {
   } catch (error) {
     // All retries exhausted or unexpected error
     const isConfigError = error instanceof Error && error.message.includes('not configured');
+    const isQuotaError = error instanceof Error && error.message.includes('quota');
 
     return Response.json(
       {
         error: isConfigError
           ? 'AI service is not configured'
-          : 'AI assistant is temporarily unavailable. Please try again later.',
-        code: isConfigError ? 'SERVICE_NOT_CONFIGURED' : 'SERVICE_UNAVAILABLE',
+          : isQuotaError
+            ? 'Gemini quota or rate limit reached. Please try again later.'
+            : 'AI assistant is temporarily unavailable. Please try again later.',
+        code: isConfigError ? 'SERVICE_NOT_CONFIGURED' : isQuotaError ? 'QUOTA_EXCEEDED' : 'SERVICE_UNAVAILABLE',
       } satisfies ChatErrorResponse,
-      { status: 503 }
+      { status: isQuotaError ? 429 : 503 }
     );
   }
 }
