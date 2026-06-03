@@ -79,7 +79,7 @@ describe('validateCareerStoryInput', () => {
   });
 
   it('accepts normal role description', () => {
-    const result = validateCareerStoryInput('Senior Frontend Engineer at Google');
+    const result = validateCareerStoryInput('Frontend Engineer at Google');
     expect(result.valid).toBe(true);
     expect(result.error).toBeUndefined();
   });

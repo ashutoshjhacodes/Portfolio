@@ -108,7 +108,7 @@ export default function CareerStoryGenerator() {
                   setValidationError(null);
                   setError(null);
                 }}
-                placeholder="e.g., Senior Frontend Engineer at Stripe, React Lead at Netflix..."
+                placeholder="e.g., Frontend Engineer at Stripe, React Lead at Netflix..."
                 className="w-full min-h-[120px] bg-[rgba(26,34,52,0.6)] backdrop-blur-[12px] border border-[rgba(255,255,255,0.08)] rounded-xl p-6 text-text-primary placeholder-text-secondary/50 focus:border-primary-accent focus:ring-1 focus:ring-primary-accent/20 focus:outline-none transition-colors resize-y"
                 disabled={isLoading}
                 maxLength={500}

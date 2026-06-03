@@ -46,11 +46,11 @@ const SITE_NAME = 'Ashutosh Jha Portfolio';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Ashutosh Jha | Senior Frontend Engineer',
+    default: 'Ashutosh Jha | Frontend Engineer',
     template: '%s | Ashutosh Jha',
   },
   description:
-    'Senior Frontend Engineer with 5+ years building enterprise platforms at scale. React, TypeScript, GraphQL, and AI-powered solutions serving 60+ countries.',
+    'Frontend Engineer with 5+ years building enterprise platforms at scale. React, TypeScript, GraphQL, and AI-powered solutions serving 60+ countries.',
   alternates: {
     canonical: SITE_URL,
   },
@@ -59,23 +59,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: 'Ashutosh Jha | Senior Frontend Engineer',
+    title: 'Ashutosh Jha | Frontend Engineer',
     description:
-      'Senior Frontend Engineer with 5+ years building enterprise platforms at scale. React, TypeScript, GraphQL, and AI-powered solutions serving 60+ countries.',
+      'Frontend Engineer with 5+ years building enterprise platforms at scale. React, TypeScript, GraphQL, and AI-powered solutions serving 60+ countries.',
     images: [
       {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Ashutosh Jha - Senior Frontend Engineer',
+        alt: 'Ashutosh Jha - Frontend Engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ashutosh Jha | Senior Frontend Engineer',
+    title: 'Ashutosh Jha | Frontend Engineer',
     description:
-      'Senior Frontend Engineer with 5+ years building enterprise platforms at scale. React, TypeScript, GraphQL, and AI-powered solutions serving 60+ countries.',
+      'Frontend Engineer with 5+ years building enterprise platforms at scale. React, TypeScript, GraphQL, and AI-powered solutions serving 60+ countries.',
     images: ['/images/og-image.png'],
   },
   robots: {
@@ -97,7 +97,7 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Ashutosh Jha',
-  jobTitle: 'Senior Frontend Engineer',
+  jobTitle: 'Frontend Engineer',
   url: SITE_URL,
   sameAs: [
     'https://github.com/ashutoshjhacodes',

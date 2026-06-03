@@ -84,7 +84,7 @@ export interface ResumeData {
 export const resumeData: ResumeData = {
   personal: {
     name: "Ashutosh Jha",
-    title: "Senior Frontend Engineer",
+    title: "Frontend Engineer",
     subtitle: "Building scalable frontend architecture for enterprise platforms — performance, AI, and design systems.",
     email: "jashutosh498@gmail.com",
     github: "https://github.com/ashutoshjhacodes",
