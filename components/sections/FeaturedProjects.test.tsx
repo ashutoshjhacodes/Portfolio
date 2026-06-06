@@ -62,7 +62,7 @@ describe('FeaturedProjects', () => {
   it('displays CIPHER as the first project (flagship)', () => {
     render(<FeaturedProjects />);
     const headings = screen.getAllByRole('heading', { level: 3 });
-    expect(headings[0]).toHaveTextContent('CIPHER AI Platform');
+    expect(headings[0]).toHaveTextContent('CIPHER AI Fleet Damage Intelligence Platform');
   });
 
   it('marks CIPHER card with flagship badge', () => {
@@ -72,7 +72,7 @@ describe('FeaturedProjects', () => {
 
   it('displays project titles in cards', () => {
     render(<FeaturedProjects />);
-    expect(screen.getByText('CIPHER AI Platform')).toBeInTheDocument();
+    expect(screen.getByText('CIPHER AI Fleet Damage Intelligence Platform')).toBeInTheDocument();
     expect(screen.getByText('Corporate Real Estate Platform')).toBeInTheDocument();
     expect(screen.getByText('Avis.com Performance Optimization')).toBeInTheDocument();
   });
@@ -88,7 +88,7 @@ describe('FeaturedProjects', () => {
   it('displays project description for projects', () => {
     render(<FeaturedProjects />);
     expect(
-      screen.getByText('AI-powered fleet damage assessment platform reducing processing from 45 minutes to 10 seconds')
+      screen.getByText('AI-powered fleet damage intelligence platform reducing assessment time from 45 minutes to under 10 seconds')
     ).toBeInTheDocument();
   });
 
@@ -106,17 +106,17 @@ describe('FeaturedProjects', () => {
 
   it('opens ProjectDetailModal when View Details is clicked', () => {
     render(<FeaturedProjects />);
-    const viewDetailsButton = screen.getByRole('button', { name: /View details for CIPHER AI Platform/i });
+    const viewDetailsButton = screen.getByRole('button', { name: /View details for CIPHER AI Fleet Damage Intelligence Platform/i });
     fireEvent.click(viewDetailsButton);
 
     const modal = screen.getByTestId('project-detail-modal');
     expect(modal).toBeInTheDocument();
-    expect(screen.getByTestId('modal-project-title')).toHaveTextContent('CIPHER AI Platform');
+    expect(screen.getByTestId('modal-project-title')).toHaveTextContent('CIPHER AI Fleet Damage Intelligence Platform');
   });
 
   it('closes ProjectDetailModal when onClose is called', () => {
     render(<FeaturedProjects />);
-    const viewDetailsButton = screen.getByRole('button', { name: /View details for CIPHER AI Platform/i });
+    const viewDetailsButton = screen.getByRole('button', { name: /View details for CIPHER AI Fleet Damage Intelligence Platform/i });
     fireEvent.click(viewDetailsButton);
 
     const closeButton = screen.getByRole('button', { name: /Close modal/i });

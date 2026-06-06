@@ -1,6 +1,6 @@
 # Ashutosh Jha — Portfolio
 
-Personal portfolio website for Ashutosh Jha, Frontend Engineer. Built with Next.js, React, TypeScript, Tailwind CSS, and Framer Motion.
+Personal portfolio website for Ashutosh Jha, Software Development Engineer. Built with Next.js, React, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Tech Stack
 

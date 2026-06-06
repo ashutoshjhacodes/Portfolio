@@ -14,7 +14,7 @@ describe('retrieveContext', () => {
   });
 
   it('returns relevant sections for a query about CIPHER project', () => {
-    const result = retrieveContext('Tell me about the CIPHER AI Platform', resumeData);
+    const result = retrieveContext('Tell me about the CIPHER AI Fleet Damage Intelligence Platform', resumeData);
     expect(result.relevantSections.length).toBeGreaterThan(0);
     expect(result.confidence).toBeGreaterThan(CONFIDENCE_THRESHOLD);
     const combined = result.relevantSections.join(' ').toLowerCase();

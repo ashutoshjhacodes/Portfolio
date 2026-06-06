@@ -50,7 +50,7 @@ describe('SkillsDisplay', () => {
       'Styling',
       'Languages',
       'APIs',
-      'Tools',
+      'Testing & DevOps',
       'AI/ML',
     ];
     expectedCategories.forEach((category) => {

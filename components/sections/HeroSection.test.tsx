@@ -52,9 +52,9 @@ describe('HeroSection', () => {
     expect(heading.className).toContain('text-hero');
   });
 
-  it('renders the professional title "Frontend Engineer"', () => {
+  it('renders the professional title "Software Development Engineer"', () => {
     render(<HeroSection />);
-    expect(screen.getByText('Frontend Engineer')).toBeInTheDocument();
+    expect(screen.getByText('Software Development Engineer')).toBeInTheDocument();
   });
 
   it('renders a profile photo with proper alt text', () => {

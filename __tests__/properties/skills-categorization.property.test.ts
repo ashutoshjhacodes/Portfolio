@@ -36,12 +36,26 @@ function buildSkillToCategoryMap(): Map<string, string> {
 
 // The expected skills and categories per Requirements 11.1, 11.3
 const EXPECTED_SKILLS_BY_CATEGORY: Record<string, string[]> = {
-  'Frontend Frameworks': ['React.js', 'Redux', 'Context API', 'React Hooks', 'TypeScript'],
-  'Styling': ['Material UI', 'Ag-Grid', 'Tailwind CSS', 'CSS3'],
+  'Frontend Frameworks': ['React.js', 'Next.js', 'Redux', 'Context API', 'React Hooks', 'TypeScript'],
+  'Styling': ['Material UI', 'Ag-Grid', 'Tailwind CSS', 'CSS3', 'Responsive Design', 'WCAG Accessibility'],
   'Languages': ['JavaScript (ES6+)', 'HTML5'],
-  'APIs': ['GraphQL', 'REST APIs'],
-  'Tools': ['Git', 'GitHub', 'Vite', 'Postman'],
-  'AI/ML': ['AWS Bedrock', 'Strands Agent SDK'],
+  'APIs': ['GraphQL', 'REST APIs', 'Apollo Client', 'Node.js'],
+  'Testing & DevOps': [
+    'Jest',
+    'React Testing Library',
+    'AWS S3',
+    'AWS Lambda',
+    'Git',
+    'GitHub',
+    'CI/CD Pipelines',
+    'Vite',
+    'Webpack',
+    'Postman',
+    'Agile',
+    'Scrum',
+    'JIRA',
+  ],
+  'AI/ML': ['AWS Bedrock', 'Strands Agent SDK', 'Prompt Engineering', 'LLM Integration'],
 };
 
 describe('Property 5: Skills Categorization Completeness', () => {
@@ -61,11 +75,11 @@ describe('Property 5: Skills Categorization Completeness', () => {
       expect(actualCategories).toEqual(expectedCategories);
     });
 
-    it('the total skill count matches the expected count of 19', () => {
+    it('the total skill count matches the expected count of 31', () => {
       const allSkillNames = getAllSkillNames();
       const expectedTotal = Object.values(EXPECTED_SKILLS_BY_CATEGORY).flat().length;
       expect(allSkillNames.length).toBe(expectedTotal);
-      expect(allSkillNames.length).toBe(19);
+      expect(allSkillNames.length).toBe(31);
     });
   });
 

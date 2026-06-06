@@ -8,7 +8,7 @@ import ProjectDetailModal from '@/components/ui/ProjectDetailModal';
 
 /**
  * FeaturedProjects section displaying premium project cards in a grid layout.
- * CIPHER AI Platform is displayed first with a flagship indicator (accent border + badge).
+ * CIPHER AI Fleet Damage Intelligence Platform is displayed first with a flagship indicator (accent border + badge).
  * Each card shows a visual placeholder area, problem statement, tech stack, and a "View Details" button.
  * Clicking "View Details" opens the ProjectDetailModal with full project data.
  *

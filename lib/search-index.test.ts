@@ -19,7 +19,7 @@ describe('search-index', () => {
       const items = getAllSearchItems();
       const projects = items.filter((item) => item.type === 'project');
       expect(projects.length).toBe(3);
-      expect(projects.map((p) => p.title)).toContain('CIPHER AI Platform');
+      expect(projects.map((p) => p.title)).toContain('CIPHER AI Fleet Damage Intelligence Platform');
       expect(projects.map((p) => p.title)).toContain('Corporate Real Estate Platform');
       expect(projects.map((p) => p.title)).toContain('Avis.com Performance Optimization');
     });
@@ -27,8 +27,8 @@ describe('search-index', () => {
     it('includes all skills from resumeData', () => {
       const items = getAllSearchItems();
       const skills = items.filter((item) => item.type === 'skill');
-      // 5 + 4 + 2 + 2 + 4 + 2 = 19 skills total
-      expect(skills.length).toBe(19);
+      // Skills are sourced from the latest CV-backed resumeData categories.
+      expect(skills.length).toBe(31);
       expect(skills.map((s) => s.title)).toContain('React.js');
       expect(skills.map((s) => s.title)).toContain('TypeScript');
       expect(skills.map((s) => s.title)).toContain('GraphQL');
@@ -79,7 +79,7 @@ describe('search-index', () => {
     it('finds projects by name', () => {
       const results = search('CIPHER');
       expect(results.length).toBeGreaterThan(0);
-      expect(results.some((r) => r.title === 'CIPHER AI Platform')).toBe(true);
+      expect(results.some((r) => r.title === 'CIPHER AI Fleet Damage Intelligence Platform')).toBe(true);
     });
 
     it('finds skills by name', () => {

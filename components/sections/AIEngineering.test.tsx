@@ -50,7 +50,7 @@ describe('AIEngineering', () => {
     render(<AIEngineering />);
     expect(screen.getByText(/Accelerated component development/)).toBeInTheDocument();
     expect(screen.getByText(/Improved system design decisions/)).toBeInTheDocument();
-    expect(screen.getByText(/Streamlined CIPHER AI Platform/)).toBeInTheDocument();
+    expect(screen.getByText(/Streamlined CIPHER AI Fleet Damage Intelligence Platform/)).toBeInTheDocument();
     expect(screen.getByText(/Enhanced development workflow/)).toBeInTheDocument();
   });
 

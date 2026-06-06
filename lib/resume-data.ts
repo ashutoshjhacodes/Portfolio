@@ -84,8 +84,8 @@ export interface ResumeData {
 export const resumeData: ResumeData = {
   personal: {
     name: "Ashutosh Jha",
-    title: "Frontend Engineer",
-    subtitle: "Building scalable frontend architecture for enterprise platforms — performance, AI, and design systems.",
+    title: "Software Development Engineer",
+    subtitle: "Building enterprise-scale React, TypeScript, GraphQL, and AI-powered frontend platforms.",
     email: "jashutosh498@gmail.com",
     github: "https://github.com/ashutoshjhacodes",
     linkedin: "https://linkedin.com/in/mrjha",
@@ -99,7 +99,8 @@ export const resumeData: ResumeData = {
   metrics: [
     { label: "Years Experience", value: "5+", numericValue: 5, suffix: "+" },
     { label: "Countries Served", value: "60+", numericValue: 60, suffix: "+" },
-    { label: "Data Grid Rows", value: "100K+", numericValue: 100000, suffix: "+" },
+    { label: "Users Served", value: "3M+", numericValue: 3000000, suffix: "+" },
+    { label: "LCP Reduction", value: "40%", numericValue: 40, suffix: "%" },
     { label: "AI Processing Time", value: "45min→10sec" },
   ],
   experience: [
@@ -111,13 +112,13 @@ export const resumeData: ResumeData = {
       responsibilities: [
         "Led end-to-end frontend for Corporate Real Estate suite (Lease, Location, Airport, Finance) — architecture through production on a Fortune 500 global platform serving 60+ countries",
         "Built shared component library (hooks, modals, form utils) across 5+ enterprise modules, cutting duplicate implementation by ~30%",
-        "Built Ag-Grid tables stable at 100K+ rows with server-side pagination, filtering & CSV export",
-        "Optimised avis.com Core Web Vitals (LCP, CLS, FID) via code-splitting, lazy loading & asset delivery",
+        "Built Ag-Grid tables stable at 100K+ rows with server-side pagination, dynamic filtering & CSV export",
+        "Improved avis.com Core Web Vitals: Lighthouse 50→80+, LCP 4.2s→2.5s (-40%), CLS <0.1, FID <100ms via code-splitting, lazy loading, image optimization & CDN delivery",
         "Integrated GraphQL & REST APIs across modules; contributed to Fleet Management dashboards & process automation",
         "Accelerated delivery using AI tools (Claude, ChatGPT, Amazon Q, Kiro) for code generation, debugging & PR reviews",
       ],
       achievements: [
-        "Improved Core Web Vitals scores across avis.com serving 60+ countries",
+        "Improved avis.com Lighthouse scores from 50 to 80+ and reduced LCP by 40% across global deployments",
         "Architected reusable component library shared across 5+ product modules, cutting duplication by ~30%",
         "Implemented high-performance data grids handling 100K+ rows with server-side pagination",
         "Reduced page load times through code splitting and lazy loading strategies",
@@ -131,28 +132,31 @@ export const resumeData: ResumeData = {
         "REST APIs",
         "Vite",
         "Git",
+        "CI/CD",
       ],
     },
     {
       id: "tcs",
       company: "TCS",
-      role: "Frontend Developer",
+      role: "Software Engineer",
       period: "Oct 2020 – Mar 2023",
       client: "DSB Bank",
       responsibilities: [
-        "Built 8+ business-critical banking web apps for DSB Bank",
+        "Owned frontend development across 8+ enterprise banking applications serving 3M+ users for DSB Bank",
         "Integrated ServiceNow automating 5+ manual processes and reducing resolution time across key banking workflows",
         "Developed 10+ reusable React components across 3 apps, cutting per-feature delivery by ~20%",
-        "Owned full release cycles — sprint planning through UAT & production across 3 major releases",
+        "Owned full release cycles — requirements gathering through UAT & production deployment across 3 major releases",
+        "Practiced Agile/Scrum with bi-weekly sprints, peer code reviews and cross-functional stakeholder collaboration",
       ],
       achievements: [
-        "Delivered 8+ business-critical banking web applications",
+        "Delivered 8+ enterprise banking applications serving 3M+ users",
         "Automated 5+ manual processes via ServiceNow integration, reducing resolution time",
         "Built 10+ reusable React components cutting per-feature delivery by ~20%",
         "Awarded Best Team Award & On-the-Spot Award for high-impact contributions on critical production releases",
       ],
       technologies: [
         "React.js",
+        "TypeScript",
         "JavaScript (ES6+)",
         "ServiceNow",
         "REST APIs",
@@ -165,22 +169,23 @@ export const resumeData: ResumeData = {
   projects: [
     {
       id: "cipher",
-      title: "CIPHER AI Platform",
+      title: "CIPHER AI Fleet Damage Intelligence Platform",
       isFlagship: true,
-      description: "AI-powered fleet damage assessment platform reducing processing from 45 minutes to 10 seconds",
-      role: "Lead Frontend Engineer — built 30+ React/TS components in 48 hours",
-      techStack: ["React", "TypeScript", "AWS Bedrock", "Strands Agent SDK"],
+      description: "AI-powered fleet damage intelligence platform reducing assessment time from 45 minutes to under 10 seconds",
+      role: "Lead Frontend Engineer — delivered complete responsive frontend in 48 hours",
+      techStack: ["React", "TypeScript", "AWS Bedrock", "Strands Agent SDK", "Generative AI", "JWT"],
       challenges: [
         "Processing complex fleet damage documents that previously took 45 minutes manually",
         "Orchestrating a 5-agent AWS Bedrock pipeline for accurate data extraction",
         "Achieving 98.6% accuracy across diverse document formats",
-        "Delivering 30+ React/TS components in 48 hours during hackathon",
+        "Delivering real-time pipeline visualization, multi-image upload, analytics dashboards and JWT authentication in 48 hours",
       ],
       outcomes: [
         "5-Agent Pipeline architecture for fleet damage assessment",
-        "45 min → 10 sec processing time reduction",
+        "45 min → under 10 sec processing time reduction",
         "98.6% accuracy in automated data extraction",
         "80%+ reduction in per-assessment operational cost",
+        "30+ React/TypeScript components with responsive design and WCAG accessibility",
         "Fleet-wide damage analysis across 1,000s of vehicles",
       ],
       metrics: {
@@ -232,6 +237,7 @@ export const resumeData: ResumeData = {
       category: "Frontend Frameworks",
       skills: [
         { name: "React.js", category: "Frontend Frameworks" },
+        { name: "Next.js", category: "Frontend Frameworks" },
         { name: "Redux", category: "Frontend Frameworks" },
         { name: "Context API", category: "Frontend Frameworks" },
         { name: "React Hooks", category: "Frontend Frameworks" },
@@ -245,6 +251,8 @@ export const resumeData: ResumeData = {
         { name: "Ag-Grid", category: "Styling" },
         { name: "Tailwind CSS", category: "Styling" },
         { name: "CSS3", category: "Styling" },
+        { name: "Responsive Design", category: "Styling" },
+        { name: "WCAG Accessibility", category: "Styling" },
       ],
     },
     {
@@ -259,15 +267,26 @@ export const resumeData: ResumeData = {
       skills: [
         { name: "GraphQL", category: "APIs" },
         { name: "REST APIs", category: "APIs" },
+        { name: "Apollo Client", category: "APIs" },
+        { name: "Node.js", category: "APIs" },
       ],
     },
     {
-      category: "Tools",
+      category: "Testing & DevOps",
       skills: [
-        { name: "Git", category: "Tools" },
-        { name: "GitHub", category: "Tools" },
-        { name: "Vite", category: "Tools" },
-        { name: "Postman", category: "Tools" },
+        { name: "Jest", category: "Testing & DevOps" },
+        { name: "React Testing Library", category: "Testing & DevOps" },
+        { name: "AWS S3", category: "Testing & DevOps" },
+        { name: "AWS Lambda", category: "Testing & DevOps" },
+        { name: "Git", category: "Testing & DevOps" },
+        { name: "GitHub", category: "Testing & DevOps" },
+        { name: "CI/CD Pipelines", category: "Testing & DevOps" },
+        { name: "Vite", category: "Testing & DevOps" },
+        { name: "Webpack", category: "Testing & DevOps" },
+        { name: "Postman", category: "Testing & DevOps" },
+        { name: "Agile", category: "Testing & DevOps" },
+        { name: "Scrum", category: "Testing & DevOps" },
+        { name: "JIRA", category: "Testing & DevOps" },
       ],
     },
     {
@@ -275,6 +294,8 @@ export const resumeData: ResumeData = {
       skills: [
         { name: "AWS Bedrock", category: "AI/ML" },
         { name: "Strands Agent SDK", category: "AI/ML" },
+        { name: "Prompt Engineering", category: "AI/ML" },
+        { name: "LLM Integration", category: "AI/ML" },
       ],
     },
   ],
@@ -292,7 +313,7 @@ export const resumeData: ResumeData = {
     {
       name: "Amazon Q",
       workflow: "AWS service integration and Bedrock pipeline development",
-      outcome: "Streamlined CIPHER AI Platform's 5-agent pipeline architecture",
+      outcome: "Streamlined CIPHER AI Fleet Damage Intelligence Platform's 5-agent pipeline architecture",
     },
     {
       name: "Kiro",

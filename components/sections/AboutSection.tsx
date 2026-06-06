@@ -51,9 +51,10 @@ export default function AboutSection() {
               </span>{' '}
               experience, I specialize in building high-performance, scalable web
               applications using React, TypeScript, and GraphQL. I&apos;ve architected
-              platforms serving Fortune 500 companies across 60+ countries, from
-              corporate real estate suites handling 100K+ data rows to AI-powered
-              document processing pipelines achieving 98.6% accuracy.
+              platforms serving Fortune 500 companies across 60+ countries and
+              banking products reaching 3M+ users, from corporate real estate suites
+              handling 100K+ data rows to AI-powered damage intelligence pipelines
+              achieving 98.6% accuracy.
             </p>
             <p className="mt-4 text-body-responsive leading-relaxed text-text-secondary">
               My work spans automotive and fleet management at{' '}
@@ -62,7 +63,8 @@ export default function AboutSection() {
               <span className="font-medium text-text-primary">TCS</span> for{' '}
               <span className="font-medium text-text-primary">DSB Bank</span>. I focus
               on component-driven development, performance optimization, and creating
-              reusable systems that accelerate team delivery.
+              reusable systems that accelerate team delivery, including Lighthouse
+              improvements from 50 to 80+ and a 40% LCP reduction.
             </p>
           </motion.div>
 

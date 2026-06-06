@@ -55,7 +55,7 @@ const leadershipAreas = [
     id: 'performance-engineering',
     title: 'Performance Engineering',
     description:
-      'Optimizing Core Web Vitals and implementing high-performance data grids at 100K+ rows',
+      'Improving Lighthouse 50→80+, reducing LCP by 40%, and implementing data grids at 100K+ rows',
     icon: (
       <svg
         width="32"

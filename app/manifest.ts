@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Ashutosh Jha Portfolio',
     short_name: 'AJ Portfolio',
-    description: 'Career acceleration platform for Ashutosh Jha, Frontend Engineer',
+    description: 'Career acceleration platform for Ashutosh Jha, Software Development Engineer',
     start_url: '/',
     display: 'standalone',
     background_color: '#000000',
