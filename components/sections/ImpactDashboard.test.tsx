@@ -56,11 +56,12 @@ describe('ImpactDashboard', () => {
     expect(screen.getByRole('heading', { name: 'Engineering Impact' })).toBeInTheDocument();
   });
 
-  it('displays all 4 metric labels from resume data', () => {
+  it('displays all metric labels from resume data', () => {
     render(<ImpactDashboard />);
     expect(screen.getByText('Years Experience')).toBeInTheDocument();
     expect(screen.getByText('Countries Served')).toBeInTheDocument();
-    expect(screen.getByText('Data Grid Rows')).toBeInTheDocument();
+    expect(screen.getByText('Users Served')).toBeInTheDocument();
+    expect(screen.getByText('LCP Reduction')).toBeInTheDocument();
     expect(screen.getByText('AI Processing Time')).toBeInTheDocument();
   });
 
@@ -78,11 +79,11 @@ describe('ImpactDashboard', () => {
     expect(mockObserve).toHaveBeenCalled();
   });
 
-  it('uses responsive grid classes', () => {
+  it('uses centered responsive wrapping layout classes', () => {
     const { container } = render(<ImpactDashboard />);
-    const grid = container.querySelector('.grid');
-    expect(grid).toHaveClass('grid-cols-1');
-    expect(grid).toHaveClass('sm:grid-cols-2');
-    expect(grid).toHaveClass('lg:grid-cols-4');
+    const metricList = container.querySelector('.flex.flex-wrap');
+    expect(metricList).toHaveClass('justify-center');
+    expect(metricList).toHaveClass('gap-6');
+    expect(metricList).toHaveClass('md:gap-8');
   });
 });

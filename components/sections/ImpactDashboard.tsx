@@ -37,7 +37,7 @@ export default function ImpactDashboard() {
       aria-label="Impact Metrics Dashboard"
       className="w-full py-16 md:py-20 px-4 md:px-8"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-heading font-bold text-text-primary tracking-tight mb-12 text-center">
           Engineering Impact
         </h2>
@@ -47,20 +47,24 @@ export default function ImpactDashboard() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+          className="flex flex-wrap justify-center gap-6 md:gap-8"
         >
           {resumeData.metrics.map((metric, index) => (
             <motion.div
               key={metric.label}
               variants={staggerItem}
               whileHover={cardHoverElevation}
-              className={`flex flex-col items-center justify-center p-8 rounded-xl bg-[rgba(26,34,52,0.6)] backdrop-blur-[12px] border border-[rgba(255,255,255,0.06)] text-center ${
+              className={`flex min-h-[120px] w-full flex-col items-center justify-center rounded-xl bg-[rgba(26,34,52,0.6)] px-5 py-7 text-center backdrop-blur-[12px] border border-[rgba(255,255,255,0.06)] sm:w-[calc(50%-0.75rem)] md:px-6 md:py-8 lg:w-[calc(20%-1.6rem)] ${
                 index % 2 === 0
                   ? 'border-t-2 border-t-primary-accent'
                   : 'border-t-2 border-t-secondary-accent'
               }`}
             >
-              <span className="text-3xl md:text-4xl font-bold text-text-primary mb-3">
+              <span
+                className={`mb-3 font-bold text-text-primary ${
+                  metric.value.length > 8 ? 'text-2xl md:text-3xl' : 'text-3xl md:text-4xl'
+                }`}
+              >
                 <span>{metric.value}</span>
               </span>
               <span className="text-sm text-text-secondary">
